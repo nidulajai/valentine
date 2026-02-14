@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Be My Valentine</title>
+  <title>Be My Valentine 💖</title>
   <style>
     body {
-      background: pink;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
       text-align: center;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       padding-top: 100px;
+      color: white;
     }
+
+    h1 {
+      font-size: 2.8em;
+    }
+
     button {
-      font-size: 20px;
+      font-size: 1.5em;
       padding: 15px 30px;
       margin: 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
     }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
     #no {
+      background-color: white;
+      color: #ff4d6d;
       position: absolute;
     }
   </style>
 </head>
 <body>
-  <h1>Will you be my Valentine? 💖</h1>
-  <button onclick="yes()">Yes 💘</button>
-  <button id="no" onmouseover="move()">No 😳</button>
+
+  <h1>Yonzy Panchi 💕</h1>
+  <h1>Will you be my Valentine? 💘</h1>
+
+  <button id="yes" onclick="yesClicked()">Yes 💖</button>
+  <button id="no" onmouseover="moveButton()">No 🙈</button>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
-    function yes() {
-      document.body.innerHTML = "<h1>YAY 💕 I love you 😘</h1>";
+    function yesClicked() {
+      document.body.innerHTML = "<h1>YAYYY 💕 I love you Yonzy Panchi 😘</h1><p>Happy Valentine’s Day ❤️</p>";
     }
-    function move() {
-      let x = Math.random() * window.innerWidth;
-      let y = Math.random() * window.innerHeight;
-      document.getElementById("no").style.left = x + "px";
-      document.getElementById("no").style.top = y + "px";
+
+    function moveButton() {
+      const button = document.getElementById("no");
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 120);
+      button.style.left = x + "px";
+      button.style.top = y + "px";
     }
   </script>
+
 </body>
 </html>
